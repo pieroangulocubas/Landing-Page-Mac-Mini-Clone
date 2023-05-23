@@ -17,11 +17,21 @@
   /* Utils */
   --header-height: 3rem;
   --time:150ms;
+  --large-max-width:91%;
+  --medium-max-width:83%;
+  --small-max-width: 75%;
 
   /* Z Index */
   --z-negative:-1;
   --z-normal:1;
   --z-sticky:50;
+
+
+}
+
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 3rem);
 }
 
 body{
@@ -29,6 +39,12 @@ body{
   font-family: var(--body-font);
   background: var(--body-bg);
   overflow-x: hidden;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
 }
 
 button{
@@ -45,10 +61,27 @@ a:hover{
   text-decoration: underline;
 }
 
+a.arrow{
+  display: inline-block;
+}
+
+a.arrow::after{
+  content: '\e900';
+  display: inline;
+  padding-left: 0.25rem;
+  font-size: 0.65rem;
+  font-family: 'icomoon' !important;
+}
+
 .black-background{
   background-color: var(--bg-color);
 }
 
 .black-background-alt{
   background-color:var(--bg-color-alt);
+}
+
+/* TODO: */
+.section-placeholder{
+  min-height: 100vh;
 }
